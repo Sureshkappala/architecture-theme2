@@ -11,7 +11,7 @@ content="width=device-width, initial-scale=1.0"
 />
 
 <title>
-Login - Stackly
+Register - Stackly
 </title>
 
 <link
@@ -32,96 +32,82 @@ href="css/style.css"
 <div class="login-right">
 
 <a
-href="index.html"
+href="login.html"
 class="back"
 >
 
-← Back to Home
+← Back to Login
 
 </a>
 
 <h1>
 
-Welcome Back
+Create Account
 
 </h1>
 
-<p>
-
-Sign in to access your account
-
-</p>
-
-<div class="roles">
-
-<button
-id="client"
-class="active"
-onclick="selectRole('client')"
->
-
-Client
-
-</button>
-
-<button
-id="admin"
-onclick="selectRole('admin')"
->
-
-Admin
-
-</button>
-
-
-</div>
+<input
+id="firstName"
+type="text"
+placeholder="First Name"
+/>
 
 <input
-id="email"
+id="lastName"
+type="text"
+placeholder="Last Name"
+/>
+
+<input
+id="registerEmail"
 type="email"
-placeholder="Enter your email"
+placeholder="Email Address"
 />
 
 <input
-id="password"
-type="password"
-placeholder="Enter password"
+id="phone"
+type="text"
+placeholder="Phone Number"
 />
 
-<div class="login-options">
+<input
+id="registerPassword"
+type="password"
+placeholder="Password"
+/>
 
-<label>
+<input
+id="confirmPassword"
+type="password"
+placeholder="Confirm Password"
+/>
+
+<label
+class="terms"
+>
 
 <input type="checkbox">
 
-Remember me
+Agree Terms
 
 </label>
 
-<a href="forgot-password.html">
-
-Forgot password?
-
-</a>
-
-</div>
-
 <button
 class="signin"
-onclick="login()"
+onclick="register()"
 >
 
-Sign In
+Create Account
 
 </button>
 
 <div class="signup">
 
-Don't have account?
+Already have account?
 
-<a href="register.html">
+<a href="login.html">
 
-Sign up
+Sign In
 
 </a>
 

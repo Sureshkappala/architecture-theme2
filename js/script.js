@@ -1,11 +1,4 @@
-/* LOGIN */
-
 function login(){
-
-let username =
-document.getElementById(
-"username"
-)?.value;
 
 let email =
 document.getElementById(
@@ -18,15 +11,13 @@ document.getElementById(
 )?.value;
 
 if(
-!username
+email === ""
 ||
-!email
-||
-!password
+password === ""
 ){
 
 alert(
-"Fill all fields"
+"Enter email and password"
 );
 
 return;
@@ -35,10 +26,10 @@ return;
 
 localStorage.setItem(
 "username",
-username
+email.split("@")[0]
 );
 
-window.location=
+window.location =
 "index.html";
 
 }
@@ -77,5 +68,147 @@ top:0,
 behavior:"smooth"
 
 });
+
+}
+function register(){
+
+let first =
+document.getElementById(
+"firstName"
+)?.value;
+
+let last =
+document.getElementById(
+"lastName"
+)?.value;
+
+let email =
+document.getElementById(
+"registerEmail"
+)?.value;
+
+let password =
+document.getElementById(
+"registerPassword"
+)?.value;
+
+let confirm =
+document.getElementById(
+"confirmPassword"
+)?.value;
+
+if(
+!first||
+!last||
+!email||
+!password||
+!confirm
+){
+
+alert(
+"Fill all fields"
+);
+
+return;
+
+}
+
+if(
+password!==confirm
+){
+
+alert(
+"Passwords do not match"
+);
+
+return;
+
+}
+
+localStorage.setItem(
+"userName",
+first
+);
+
+localStorage.setItem(
+"userEmail",
+email
+);
+
+localStorage.setItem(
+"userPassword",
+password
+);
+
+alert(
+"Account created successfully!"
+);
+
+window.location=
+"login.html";
+
+}
+function selectRole(role){
+
+let client =
+document.getElementById(
+"client"
+);
+
+let admin =
+document.getElementById(
+"admin"
+);
+
+client.classList.remove(
+"active"
+);
+
+admin.classList.remove(
+"active"
+);
+
+if(
+role==="client"
+){
+
+client.classList.add(
+"active"
+);
+
+}else{
+
+admin.classList.add(
+"active"
+);
+
+}
+
+}
+function resetPassword(){
+
+let email =
+document.getElementById(
+"resetEmail"
+)?.value;
+
+if(
+email===""
+){
+
+alert(
+"Enter email"
+);
+
+return;
+
+}
+
+alert(
+"Reset link sent successfully"
+);
+
+window.location=
+"login.html";
 
 }
