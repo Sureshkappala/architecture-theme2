@@ -5,6 +5,11 @@ document.getElementById(
 "username"
 )?.value;
 
+let email =
+document.getElementById(
+"email"
+)?.value;
+
 let password =
 document.getElementById(
 "password"
@@ -13,11 +18,13 @@ document.getElementById(
 if(
 username === ""
 ||
+email === ""
+||
 password === ""
 ){
 
 alert(
-"Enter username and password"
+"Fill all fields"
 );
 
 return;
@@ -29,27 +36,43 @@ localStorage.setItem(
 username
 );
 
-window.location=
+window.location =
 "index.html";
 
 }
+
+/* WELCOME MESSAGE */
 
 let user =
 localStorage.getItem(
 "username"
 );
 
+let welcome =
+document.getElementById(
+"welcomeUser"
+);
+
 if(
 user &&
-document.getElementById(
-"welcomeUser"
-)
+welcome
 ){
 
-document.getElementById(
-"welcomeUser"
-).innerText =
-
+welcome.innerText =
 "Hello, " + user;
+
+}
+
+/* TOP BUTTON */
+
+function goTop(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
 
 }
