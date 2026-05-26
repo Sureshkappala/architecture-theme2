@@ -1,3 +1,5 @@
+/* LOGIN */
+
 function login(){
 
 let username =
@@ -16,11 +18,11 @@ document.getElementById(
 )?.value;
 
 if(
-username === ""
+!username
 ||
-email === ""
+!email
 ||
-password === ""
+!password
 ){
 
 alert(
@@ -36,12 +38,12 @@ localStorage.setItem(
 username
 );
 
-window.location =
+window.location=
 "index.html";
 
 }
 
-/* WELCOME MESSAGE */
+/* USERNAME */
 
 let user =
 localStorage.getItem(
@@ -54,7 +56,8 @@ document.getElementById(
 );
 
 if(
-user &&
+user
+&&
 welcome
 ){
 
