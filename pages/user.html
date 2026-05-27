@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0"
+/>
+
+<title>
+Dashboard
+</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#eef2ff;
+}
+
+.dashboard{
+
+display:flex;
+
+min-height:100vh;
+
+}
+
+/* SIDEBAR */
+
+.sidebar{
+
+width:300px;
+
+min-width:300px;
+
+background:#05143f;
+
+padding:30px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.logo{
+
+color:#38bdf8;
+
+font-size:42px;
+
+font-weight:700;
+
+text-align:center;
+
+margin-bottom:50px;
+
+width:100%;
+
+overflow:hidden;
+
+}
+
+.menu{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+width:100%;
+
+}
+
+.menu div{
+
+background:#162765;
+
+color:white;
+
+padding:22px;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-size:20px;
+
+transition:.3s;
+
+}
+
+.menu div:hover{
+
+background:#2563eb;
+
+}
+
+/* CONTENT */
+
+.content{
+
+flex:1;
+
+padding:40px;
+
+overflow:auto;
+
+}
+
+.page{
+
+display:none;
+
+}
+
+#dashboard{
+
+display:block;
+
+}
+
+/* HERO */
+
+.hero{
+
+background:
+linear-gradient(
+135deg,
+#081b57,
+#315cff
+);
+
+padding:70px;
+
+border-radius:35px;
+
+text-align:center;
+
+color:white;
+
+}
+
+.hero h1{
+
+font-size:64px;
+
+}
+
+.hero p{
+
+font-size:24px;
+
+margin-top:20px;
+
+}
+
+.hero button{
+
+margin-top:30px;
+
+padding:18px 50px;
+
+background:#38bdf8;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+font-size:20px;
+
+}
+
+/* CARDS */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(
+220px,
+1fr
+)
+
+);
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+background:white;
+
+padding:40px;
+
+border-radius:22px;
+
+text-align:center;
+
+box-shadow:
+0 10px 25px
+rgba(
+0,
+0,
+0,
+0.1
+);
+
+}
+
+.card h1{
+
+color:#315cff;
+
+}
+
+/* PROFILE */
+
+.profile{
+
+background:white;
+
+padding:60px;
+
+border-radius:25px;
+
+text-align:center;
+
+}
+
+.profile img{
+
+width:180px;
+
+height:180px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+}
+
+.profile h1{
+
+margin-top:20px;
+
+}
+
+.profile button{
+
+margin-top:20px;
+
+padding:15px 40px;
+
+background:#315cff;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+}
+
+/* PROJECTS */
+
+.project-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(
+300px,
+1fr
+)
+
+);
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.project{
+
+background:white;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.project img{
+
+width:100%;
+
+height:250px;
+
+object-fit:cover;
+
+}
+
+.project h3{
+
+padding:20px;
+
+}
+
+.project p{
+
+padding:0 20px 20px;
+
+}
+
+/* MESSAGE */
+
+.msg{
+
+background:white;
+
+padding:30px;
+
+margin-top:20px;
+
+border-radius:18px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.dashboard{
+
+flex-direction:column;
+
+}
+
+.sidebar{
+
+width:100%;
+
+min-width:100%;
+
+}
+
+.hero{
+
+padding:35px;
+
+}
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.project-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<div class="sidebar">
+
+<div class="logo">
+
+STACKLY
+
+</div>
+
+<div class="menu">
+
+<div onclick="showPage('dashboard')">
+🏠 Dashboard
+</div>
+
+<div onclick="showPage('profile')">
+👤 Profile
+</div>
+
+<div onclick="showPage('projects')">
+📁 Projects
+</div>
+
+<div onclick="showPage('messages')">
+📩 Messages
+</div>
+
+<div onclick="showPage('saved')">
+⭐ Saved
+</div>
+
+<div onclick="showPage('settings')">
+⚙ Settings
+</div>
+
+<div onclick="location.href='../index.html'">
+🚪 Logout
+</div>
+
+</div>
+
+</div>
+
+
+<div class="content">
+
+<div id="dashboard" class="page">
+
+<div class="hero">
+
+<h1>
+
+Welcome,
+<span id="user">
+
+User
+
+</span>
+
+</h1>
+
+<p>
+
+Architecture • Premium Portfolio
+
+</p>
+<button
+onclick="showPage('projects')"
+>
+
+View Portfolio
+
+</button>
+
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h1>48+</h1>
+
+Projects
+
+</div>
+
+<div class="card">
+
+<h1>120+</h1>
+
+Clients
+
+</div>
+
+<div class="card">
+
+<h1>18</h1>
+
+Awards
+
+</div>
+
+<div class="card">
+
+<h1>10+</h1>
+
+Years
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="profile" class="page">
+
+<div class="profile">
+
+<img
+src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+>
+
+<h1 id="profileUser">
+
+User
+
+</h1>
+
+<p>
+
+Associate Software Engineer
+
+</p>
+
+<p>
+
+Frontend Developer
+
+</p>
+
+<button>
+
+Edit Profile
+
+</button>
+
+</div>
+
+</div>
+
+
+<div id="projects" class="page">
+
+<h1>
+
+Projects Portfolio
+
+</h1>
+
+<div class="project-grid">
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2">
+
+<h3>
+
+Luxury Tower
+
+</h3>
+
+<p>
+
+Premium Architecture
+
+</p>
+
+</div>
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+
+<h3>
+
+Villa Design
+
+</h3>
+
+<p>
+
+Modern Living
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div id="messages" class="page">
+
+<h1>
+
+Messages
+
+</h1>
+
+<div class="msg">
+
+Client approved project
+
+</div>
+
+<div class="msg">
+
+Meeting tomorrow
+
+</div>
+
+</div>
+
+
+<div id="saved" class="page">
+
+<h1>
+
+Saved
+
+</h1>
+
+<div class="msg">
+
+Saved Portfolio
+
+</div>
+
+</div>
+
+
+<div id="settings" class="page">
+
+<h1>
+
+Settings
+
+</h1>
+
+<div class="msg">
+
+Dark Mode
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const username=
+
+localStorage.getItem(
+"username"
+)
+
+||
+
+"User";
+
+document.getElementById(
+"user"
+).innerText=
+username;
+
+document.getElementById(
+"profileUser"
+).innerText=
+username;
+
+function showPage(page){
+
+document
+.querySelectorAll(
+".page"
+)
+
+.forEach(
+
+x=>
+
+x.style.display=
+"none"
+
+);
+
+document
+.getElementById(
+page
+)
+
+.style.display=
+"block";
+
+}
+
+</script>
+
+</body>
+
+</html>

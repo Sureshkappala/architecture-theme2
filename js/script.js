@@ -11,9 +11,9 @@ document.getElementById(
 )?.value;
 
 if(
-email === ""
+!email
 ||
-password === ""
+!password
 ){
 
 alert(
@@ -29,47 +29,15 @@ localStorage.setItem(
 email.split("@")[0]
 );
 
+/* OPEN DASHBOARD */
+
 window.location =
-"index.html";
+"./pages/user.html";
 
 }
 
-/* USERNAME */
+/* REGISTER */
 
-let user =
-localStorage.getItem(
-"username"
-);
-
-let welcome =
-document.getElementById(
-"welcomeUser"
-);
-
-if(
-user
-&&
-welcome
-){
-
-welcome.innerText =
-"Hello, " + user;
-
-}
-
-/* TOP BUTTON */
-
-function goTop(){
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-}
 function register(){
 
 let first =
@@ -98,11 +66,13 @@ document.getElementById(
 )?.value;
 
 if(
+
 !first||
 !last||
 !email||
 !password||
 !confirm
+
 ){
 
 alert(
@@ -126,78 +96,34 @@ return;
 }
 
 localStorage.setItem(
-"userName",
+"username",
 first
 );
 
-localStorage.setItem(
-"userEmail",
-email
-);
-
-localStorage.setItem(
-"userPassword",
-password
-);
-
 alert(
-"Account created successfully!"
+"Account created successfully"
 );
 
 window.location=
-"login.html";
-
-}
-function selectRole(role){
-
-let client =
-document.getElementById(
-"client"
-);
-
-let admin =
-document.getElementById(
-"admin"
-);
-
-client.classList.remove(
-"active"
-);
-
-admin.classList.remove(
-"active"
-);
-
-if(
-role==="client"
-){
-
-client.classList.add(
-"active"
-);
-
-}else{
-
-admin.classList.add(
-"active"
-);
+"./login.html";
 
 }
 
-}
+/* FORGOT PASSWORD */
+
 function resetPassword(){
 
-let email =
+let email=
 document.getElementById(
 "resetEmail"
 )?.value;
 
 if(
-email===""
+!email
 ){
 
 alert(
-"Enter email"
+"Enter Email"
 );
 
 return;
@@ -205,10 +131,131 @@ return;
 }
 
 alert(
-"Reset link sent successfully"
+"Reset Link Sent"
 );
 
 window.location=
-"login.html";
+"./login.html";
+
+}
+
+/* DASHBOARD */
+
+let dash=
+
+document.getElementById(
+"dashboardUser"
+);
+
+if(
+dash
+){
+
+dash.innerText=
+
+localStorage.getItem(
+"username"
+)
+
+||
+
+"User";
+
+}
+
+/* TOP BUTTON */
+
+function goTop(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+function showPage(page){
+
+document.getElementById(
+"dashboardContent"
+).style.display="none";
+
+document.getElementById(
+"profileContent"
+).style.display="none";
+
+document.getElementById(
+"projectsContent"
+).style.display="none";
+
+if(page==="dashboard"){
+
+document.getElementById(
+"dashboardContent"
+).style.display="block";
+
+}
+
+if(page==="profile"){
+
+document.getElementById(
+"profileContent"
+).style.display="block";
+
+}
+
+if(page==="projects"){
+
+document.getElementById(
+"projectsContent"
+).style.display="block";
+
+}
+
+}
+function showPage(page){
+
+const sections=[
+
+"dashboard",
+
+"profile",
+
+"projects",
+
+"messages",
+
+"saved",
+
+"settings"
+
+];
+
+sections.forEach(function(id){
+
+const section=
+document.getElementById(id);
+
+if(section){
+
+section.style.display=
+"none";
+
+}
+
+});
+
+const selected=
+
+document.getElementById(page);
+
+if(selected){
+
+selected.style.display=
+"block";
+
+}
 
 }
