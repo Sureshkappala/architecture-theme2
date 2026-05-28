@@ -55,7 +55,16 @@ Logout
 
 <h1>
 
-Welcome
+
+Welcome,
+
+<span id="userName">
+
+Admin
+
+</span>
+
+</h1>
 <span id="dashboardUser">
 
 User
@@ -141,6 +150,23 @@ Awards
 </section>
 
 <script src="js/script.js">
+
+</script>
+<script>
+
+const user=
+
+localStorage.getItem(
+"username"
+);
+
+if(user){
+
+document.getElementById(
+"userName"
+).innerText=user;
+
+}
 
 </script>
 

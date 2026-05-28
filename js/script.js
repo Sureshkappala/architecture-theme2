@@ -1,38 +1,22 @@
 function login(){
 
-let email =
-document.getElementById(
-"email"
-)?.value;
+const email =
+document.getElementById("email").value;
 
-let password =
-document.getElementById(
-"password"
-)?.value;
+const password =
+document.getElementById("password").value;
 
-if(
-!email
-||
-!password
-){
+if(email==="admin"){
 
-alert(
-"Enter email and password"
-);
-
-return;
+location.href="pages/dashboard.html";
 
 }
 
-localStorage.setItem(
-"username",
-email.split("@")[0]
-);
+else{
 
-/* OPEN DASHBOARD */
+location.href="pages/user.html";
 
-window.location =
-"./pages/user.html";
+}
 
 }
 

@@ -19,6 +19,65 @@ rel="stylesheet"
 href="css/style.css"
 />
 
+<style>
+
+.login-actions{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+.signin{
+
+width:100%;
+
+padding:15px;
+
+background:#315cff;
+
+color:white;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-size:16px;
+
+}
+
+.client{
+
+background:#14b8a6;
+
+}
+
+</style>
+
+<script>
+
+function adminLogin(){
+
+onclick="login()"
+
+}
+
+function clientLogin(){
+
+window.location.href=
+"pages/user.html";
+
+}
+
+</script>
+
 </head>
 
 <body>
@@ -46,36 +105,6 @@ Welcome Back
 
 </h1>
 
-<p>
-
-Sign in to access your account
-
-</p>
-
-<div class="roles">
-
-<button
-id="client"
-class="active"
-onclick="selectRole('client')"
->
-
-Client
-
-</button>
-
-<button
-id="admin"
-onclick="selectRole('admin')"
->
-
-Admin
-
-</button>
-
-
-</div>
-
 <input
 id="email"
 type="email"
@@ -98,22 +127,34 @@ Remember me
 
 </label>
 
-<a href="forgot-password.html">
-
-Forgot password?
-
+<a href="404.html">
+Forgot Password?
 </a>
 
 </div>
 
+<div class="login-actions">
+
 <button
+type="button"
 class="signin"
 onclick="login()"
 >
 
-Sign In
+Sign In admin
 
 </button>
+
+<button
+class="signin client"
+onclick="clientLogin()"
+>
+
+Sign In as Client
+
+</button>
+
+</div>
 
 <div class="signup">
 

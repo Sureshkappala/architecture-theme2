@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1.0"
-/>
-
-<title>
-Dashboard
-</title>
+<title>User Dashboard</title>
 
 <style>
 
@@ -27,388 +20,254 @@ body{
 background:#eef2ff;
 }
 
+/* MAIN */
+
 .dashboard{
-
-display:flex;
-
-min-height:100vh;
-
+display:grid;
+grid-template-columns:280px 1fr;
 }
 
 /* SIDEBAR */
 
 .sidebar{
-
-width:300px;
-
-min-width:300px;
-
 background:#05143f;
-
 padding:30px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
+min-height:100vh;
+position:sticky;
+top:0;
 }
 
 .logo{
-
 color:#38bdf8;
-
 font-size:42px;
-
-font-weight:700;
-
+font-weight:bold;
 text-align:center;
-
-margin-bottom:50px;
-
-width:100%;
-
-overflow:hidden;
-
+margin-bottom:40px;
+cursor:pointer;
 }
 
 .menu{
-
 display:flex;
-
 flex-direction:column;
-
 gap:18px;
-
-width:100%;
-
 }
 
 .menu div{
-
 background:#162765;
-
 color:white;
-
-padding:22px;
-
-border-radius:16px;
-
+padding:18px;
+border-radius:14px;
 cursor:pointer;
-
-font-size:20px;
-
+font-size:18px;
 transition:.3s;
-
 }
 
 .menu div:hover{
-
 background:#2563eb;
-
+transform:translateX(6px);
 }
 
 /* CONTENT */
 
 .content{
-
-flex:1;
-
 padding:40px;
-
-overflow:auto;
-
+min-height:100vh;
 }
 
 .page{
-
 display:none;
-
 }
 
 #dashboard{
-
 display:block;
-
 }
 
 /* HERO */
 
 .hero{
-
-background:
-linear-gradient(
-135deg,
-#081b57,
-#315cff
-);
-
-padding:70px;
-
-border-radius:35px;
-
+background:linear-gradient(135deg,#081b57,#315cff);
+padding:60px;
+border-radius:30px;
 text-align:center;
-
 color:white;
-
 }
 
 .hero h1{
-
-font-size:64px;
-
+font-size:55px;
 }
 
 .hero p{
-
-font-size:24px;
-
-margin-top:20px;
-
+margin-top:15px;
+font-size:22px;
 }
 
 .hero button{
-
-margin-top:30px;
-
-padding:18px 50px;
-
+margin-top:25px;
+padding:16px 40px;
 background:#38bdf8;
-
 color:white;
-
 border:none;
-
 border-radius:12px;
-
-font-size:20px;
-
+cursor:pointer;
+font-size:18px;
 }
 
 /* CARDS */
 
 .cards{
-
 display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(
-220px,
-1fr
-)
-
-);
-
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-
-margin-top:40px;
-
+margin-top:35px;
 }
 
 .card{
-
 background:white;
-
-padding:40px;
-
-border-radius:22px;
-
+padding:35px;
+border-radius:20px;
 text-align:center;
-
-box-shadow:
-0 10px 25px
-rgba(
-0,
-0,
-0,
-0.1
-);
-
+box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
 
 .card h1{
-
 color:#315cff;
-
+font-size:50px;
 }
 
 /* PROFILE */
 
 .profile{
-
+width:420px;
+margin:40px auto;
 background:white;
-
-padding:60px;
-
+padding:35px;
 border-radius:25px;
-
 text-align:center;
-
+box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
 .profile img{
-
-width:180px;
-
-height:180px;
-
+width:130px;
+height:130px;
 border-radius:50%;
-
-object-fit:cover;
-
-}
-
-.profile h1{
-
-margin-top:20px;
-
+border:5px solid #315cff;
+margin-bottom:20px;
 }
 
 .profile button{
-
-margin-top:20px;
-
-padding:15px 40px;
-
+margin-top:25px;
+padding:14px 30px;
 background:#315cff;
-
 color:white;
-
 border:none;
-
-border-radius:12px;
-
+border-radius:30px;
+cursor:pointer;
 }
 
 /* PROJECTS */
 
 .project-grid{
-
 display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(
-300px,
-1fr
-)
-
-);
-
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
-
-margin-top:40px;
-
+margin-top:30px;
 }
 
 .project{
-
 background:white;
-
 border-radius:20px;
-
 overflow:hidden;
-
+box-shadow:0 10px 20px rgba(0,0,0,.1);
 }
 
 .project img{
-
 width:100%;
-
-height:250px;
-
+height:220px;
 object-fit:cover;
-
 }
 
 .project h3{
-
-padding:20px;
-
+padding:18px;
 }
 
 .project p{
-
-padding:0 20px 20px;
-
-}
-.message-card{
-
-background:white;
-
-padding:30px;
-
-border-radius:20px;
-
-margin-top:20px;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-box-shadow:
-0 8px 18px
-rgba(
-0,
-0,
-0,
-0.1
-);
-
-}
-
-.message-card button{
-
-padding:14px 26px;
-
-background:#2563eb;
-
-color:white;
-
-border:none;
-
-border-radius:10px;
-
-cursor:pointer;
-
-}
-
-.message-card button:hover{
-
-background:#1d4ed8;
-
-}
-
-@media(max-width:768px){
-
-.message-card{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
+padding:0 18px 18px;
 }
 
 /* MESSAGE */
 
-.msg{
-
+.message-card{
 background:white;
-
-padding:30px;
-
+padding:25px;
+border-radius:20px;
 margin-top:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
 
-border-radius:18px;
+.message-card button{
+padding:12px 24px;
+background:#315cff;
+color:white;
+border:none;
+border-radius:25px;
+cursor:pointer;
+}
 
+/* SETTINGS */
+
+.msg{
+background:white;
+padding:30px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+/* FOOTER */
+
+footer{
+background:#020b2d;
+color:white;
+padding:60px 40px 30px;
+width:100%;
+}
+
+.footer-grid{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+}
+
+.footer-logo{
+color:#38bdf8;
+font-size:42px;
+margin-bottom:20px;
+}
+
+.footer-title{
+margin-bottom:20px;
+font-size:24px;
+}
+
+.footer-link{
+display:block;
+line-height:2.2;
+}
+
+.footer-text{
+line-height:1.8;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.2);
 }
 
 /* MOBILE */
@@ -416,41 +275,22 @@ border-radius:18px;
 @media(max-width:768px){
 
 .dashboard{
-
-flex-direction:column;
-
+grid-template-columns:1fr;
 }
 
 .sidebar{
+position:relative;
+min-height:auto;
+}
 
+.profile{
 width:100%;
-
-min-width:100%;
-
 }
 
-.hero{
-
-padding:35px;
-
-}
-
-.hero h1{
-
-font-size:34px;
-
-}
-
-.cards{
-
-grid-template-columns:1fr;
-
-}
-
-.project-grid{
-
-grid-template-columns:1fr;
-
+.message-card{
+flex-direction:column;
+gap:15px;
+text-align:center;
 }
 
 }
@@ -463,9 +303,14 @@ grid-template-columns:1fr;
 
 <div class="dashboard">
 
+<!-- SIDEBAR -->
+
 <div class="sidebar">
 
-<div class="logo">
+<div
+class="logo"
+onclick="window.location.href='user.html'"
+>
 
 STACKLY
 
@@ -497,7 +342,7 @@ STACKLY
 ⚙ Settings
 </div>
 
-<div onclick="location.href='../index.html'">
+<div onclick="window.location.href='../index.html'">
 🚪 Logout
 </div>
 
@@ -505,158 +350,119 @@ STACKLY
 
 </div>
 
+<!-- CONTENT -->
 
 <div class="content">
+
+<!-- DASHBOARD -->
 
 <div id="dashboard" class="page">
 
 <div class="hero">
 
 <h1>
-
 Welcome,
-<span id="user">
-
-User
-
-</span>
-
+<span id="admin">User</span>
 </h1>
 
 <p>
-
 Architecture • Premium Portfolio
-
 </p>
-<button
-onclick="showPage('projects')"
->
 
+<button onclick="showPage('projects')">
 View Portfolio
-
 </button>
-
 
 </div>
 
 <div class="cards">
 
 <div class="card">
-
 <h1>48+</h1>
-
 Projects
-
 </div>
 
 <div class="card">
-
 <h1>120+</h1>
-
 Clients
-
 </div>
 
 <div class="card">
-
 <h1>18</h1>
-
 Awards
-
 </div>
 
 <div class="card">
-
 <h1>10+</h1>
-
 Years
-
 </div>
 
 </div>
 
 </div>
 
+<!-- PROFILE -->
 
 <div id="profile" class="page">
 
 <div class="profile">
 
-<img
-src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
->
+<img src="https://i.pravatar.cc/200"/>
 
 <h1 id="profileUser">
-
 User
-
 </h1>
 
 <p>
-
 Associate Software Engineer
-
 </p>
 
 <p>
-
 Frontend Developer
-
 </p>
 
-<button>
-
+<button onclick="window.location.href='../404.html'">
 Edit Profile
-
 </button>
 
 </div>
 
 </div>
 
+<!-- PROJECTS -->
 
 <div id="projects" class="page">
 
 <h1>
-
 Projects Portfolio
-
 </h1>
 
 <div class="project-grid">
 
 <div class="project">
 
-<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2">
+<img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2"/>
 
 <h3>
-
 Luxury Tower
-
 </h3>
 
 <p>
-
 Premium Architecture
-
 </p>
 
 </div>
 
 <div class="project">
 
-<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750">
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750"/>
 
 <h3>
-
 Villa Design
-
 </h3>
 
 <p>
-
 Modern Living
-
 </p>
 
 </div>
@@ -665,118 +471,79 @@ Modern Living
 
 </div>
 
+<!-- MESSAGES -->
 
-<div
-id="messages"
-class="page"
->
+<div id="messages" class="page">
 
 <h1>
-
 Messages
-
 </h1>
 
 <div class="message-card">
 
-<h3>
+<div>
+<h3>Client Approved Project</h3>
+<p>Luxury Villa design approved.</p>
+</div>
 
-Client Approved Project
-
-</h3>
-
-<p>
-
-Luxury Villa design approved.
-
-</p>
-
-<button>
-
+<button onclick="window.location.href='../404.html'">
 Approved
-
 </button>
 
 </div>
 
-
 <div class="message-card">
 
-<h3>
+<div>
+<h3>Schedule Meeting</h3>
+<p>Meeting scheduled with client.</p>
+</div>
 
+<button onclick="window.location.href='../404.html'">
 Schedule Meeting
-
-</h3>
-
-<p>
-
-Meeting scheduled with client.
-
-</p>
-
-<button>
-
-Schedule Meeting
-
 </button>
 
 </div>
 
-
 <div class="message-card">
 
-<h3>
+<div>
+<h3>Portfolio Review</h3>
+<p>Review portfolio presentation.</p>
+</div>
 
-Portfolio Review
-
-</h3>
-
-<p>
-
-Review portfolio presentation.
-
-</p>
-
-<button>
-
+<button onclick="window.location.href='../404.html'">
 Join Meeting
-
 </button>
 
 </div>
 
 </div>
 
+<!-- SAVED -->
 
 <div id="saved" class="page">
 
 <h1>
-
 Saved
-
 </h1>
 
 <div class="msg">
-
 Saved Portfolio
-
 </div>
 
 </div>
 
+<!-- SETTINGS -->
 
 <div id="settings" class="page">
 
 <h1>
-
 Settings
-
 </h1>
 
 <div class="msg">
-
 Dark Mode
-
 </div>
 
 </div>
@@ -784,57 +551,52 @@ Dark Mode
 </div>
 
 </div>
+
+<!-- FOOTER -->
+
 
 <script>
 
-const username=
+window.onload = function(){
 
-localStorage.getItem(
-"username"
-)
+showPage('dashboard');
 
-||
+const username =
+localStorage.getItem("username") || "User";
 
-"User";
+if(document.getElementById("admin")){
 
-document.getElementById(
-"user"
-).innerText=
+document.getElementById("admin").innerText =
 username;
 
-document.getElementById(
-"profileUser"
-).innerText=
+}
+
+if(document.getElementById("profileUser")){
+
+document.getElementById("profileUser").innerText =
 username;
 
-function showPage(page){
+}
 
-document
-.querySelectorAll(
-".page"
-)
+};
 
-.forEach(
+function showPage(pageId){
 
-x=>
+const pages =
+document.querySelectorAll('.page');
 
-x.style.display=
-"none"
+pages.forEach(function(page){
 
-);
+page.style.display = 'none';
 
-document
-.getElementById(
-page
-)
+});
 
-.style.display=
-"block";
+document.getElementById(pageId).style.display =
+'block';
 
 }
 
 </script>
 
 </body>
-
 </html>
