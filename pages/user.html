@@ -31,19 +31,27 @@ grid-template-columns:280px 1fr;
 
 .sidebar{
 background:#05143f;
-padding:30px;
+padding:25px;
 min-height:100vh;
-position:sticky;
-top:0;
+}
+
+.menu{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
 }
 
 .logo{
 color:#38bdf8;
-font-size:42px;
-font-weight:bold;
+font-size:38px;
+font-weight:700;
 text-align:center;
-margin-bottom:40px;
+margin:10px 0 35px 0;
+padding:15px 0;
 cursor:pointer;
+letter-spacing:2px;
+border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
 .menu{
@@ -307,14 +315,18 @@ text-align:center;
 
 <div class="sidebar">
 
-<div
+<a
+href="user.html"
 class="logo"
-onclick="window.location.href='user.html'"
+style="
+text-decoration:none;
+color:#38bdf8;
+"
 >
 
 STACKLY
 
-</div>
+</a>
 
 <div class="menu">
 
