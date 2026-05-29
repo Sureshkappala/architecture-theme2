@@ -283,22 +283,61 @@ border-top:1px solid rgba(255,255,255,.2);
 @media(max-width:768px){
 
 .dashboard{
-grid-template-columns:1fr;
+display:flex;
+flex-direction:column;
 }
 
 .sidebar{
-position:relative;
-min-height:auto;
-}
-
-.profile{
 width:100%;
+min-height:auto;
+padding:15px;
 }
 
-.message-card{
-flex-direction:column;
-gap:15px;
-text-align:center;
+.logo{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.menu{
+gap:10px;
+}
+
+.menu div{
+padding:12px;
+font-size:15px;
+}
+
+.content{
+padding:10px;
+}
+
+.hero{
+padding:25px 15px;
+border-radius:15px;
+margin-top:15px;
+}
+
+.hero h1{
+font-size:34px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.hero button{
+padding:12px 25px;
+font-size:15px;
+}
+
+.cards{
+grid-template-columns:1fr;
+gap:12px;
+}
+
+.card{
+padding:20px;
 }
 
 }
