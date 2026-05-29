@@ -2825,3 +2825,174 @@ line-height:45px !important;
 }
 
 }
+.menu{
+display:none;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu{
+display:block;
+}
+
+.nav-links{
+display:none;
+flex-direction:column;
+width:100%;
+background:#050816;
+padding:20px 0;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+}
+.menu{
+display:none;
+font-size:32px;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu{
+display:block;
+font-size:32px;
+color:white;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:20px;
+z-index:1001;
+}
+
+.nav-links{
+display:none;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#050816;
+flex-direction:column;
+align-items:center;
+padding:20px 0;
+z-index:1000;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.nav-links li{
+list-style:none;
+margin:15px 0;
+}
+
+.nav-links li a{
+color:white;
+text-decoration:none;
+font-size:18px;
+}
+
+.login-btn{
+margin-top:10px;
+}
+
+}
+@media(max-width:768px){
+
+.menu{
+display:block !important;
+font-size:32px;
+color:#fff;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:20px;
+z-index:1001;
+}
+
+.nav-links{
+display:none !important;
+}
+
+.nav-links.active{
+display:flex !important;
+flex-direction:column;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#050816;
+padding:20px 0;
+text-align:center;
+}
+
+.nav-links li{
+list-style:none;
+margin:12px 0;
+}
+
+.nav-links li a{
+color:white;
+text-decoration:none;
+}
+
+}
+@media(max-width:768px){
+
+.menu{
+display:block !important;
+font-size:32px;
+color:white;
+cursor:pointer;
+position:absolute;
+right:20px;
+top:20px;
+z-index:9999;
+}
+
+.nav-links{
+display:none !important;
+}
+
+.nav-links.active{
+display:flex !important;
+flex-direction:column;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#050816;
+padding:20px 0;
+text-align:center;
+}
+
+.nav-links li{
+list-style:none;
+margin:12px 0;
+}
+
+}
+.mobile-logo{
+display:none;
+}
+
+@media(max-width:768px){
+
+.mobile-logo{
+display:block;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+color:#39b6ff;
+padding:20px 0;
+background:#050816;
+}
+
+}
