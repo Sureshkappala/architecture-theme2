@@ -2764,3 +2764,64 @@ img:hover{
 transform:scale(1.03);
 
 }
+/* FINAL REVIEW MOBILE FIX */
+
+@media screen and (max-width:768px){
+
+.dashboard-layout,
+.dashboard-page{
+flex-direction:column !important;
+}
+
+.sidebar{
+width:100% !important;
+padding:20px !important;
+}
+
+.main,
+.content{
+width:100% !important;
+padding:20px !important;
+}
+
+.cards,
+.stats-grid,
+.portfolio-grid{
+grid-template-columns:1fr !important;
+}
+
+.hero-box{
+padding:30px !important;
+text-align:center;
+}
+
+.cover{
+padding:40px 20px !important;
+text-align:center;
+}
+
+.cover h1{
+font-size:28px !important;
+}
+
+.card{
+padding:25px !important;
+}
+
+.profile-box,
+.profile-card{
+width:100% !important;
+}
+
+.about-content h1,
+.choose-left h1,
+.process h1,
+.gallery h1,
+.testimonials h1,
+.service-title h1,
+.project-heading h1{
+font-size:34px !important;
+line-height:45px !important;
+}
+
+}
