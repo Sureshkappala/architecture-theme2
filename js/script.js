@@ -1,24 +1,38 @@
 function login(){
 
 const email =
-document.getElementById("email").value;
+document.getElementById("email").value.trim();
 
 const password =
-document.getElementById("password").value;
+document.getElementById("password").value.trim();
 
-if(email==="admin"){
+if(email === "" || password === ""){
 
-location.href="pages/dashboard.html";
+alert("Please enter Email and Password");
 
-}
-
-else{
-
-location.href="pages/user.html";
+return;
 
 }
 
+if(
+email === "admin" &&
+password === "admin123"
+){
+
+window.location.href =
+"pages/admin.html";
+
+return;
+
 }
+
+window.location.href =
+"pages/user.html";
+
+}
+
+
+
 
 /* REGISTER */
 
